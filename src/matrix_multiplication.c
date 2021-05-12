@@ -12,18 +12,20 @@ extern long aRows;
 extern long aColumns;
 extern long bRows;
 extern long bColumns;
-extern long long **matOutM1;
-extern long long **matOutM2;
-extern long long **matOutM3;
+extern long long **matOut;
 
 
-void first_method(){         
+
+void first_method(){
 
 }
-void second_method(){         
+void second_method(){
+
 
 }
 void third_method(){         
 
 }
+void clear_output_matrix(){
 
+}

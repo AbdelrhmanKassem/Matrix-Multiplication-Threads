@@ -14,14 +14,16 @@
 #include <stdlib.h>
 #include <sys/time.h>
 #include <string.h>
+#include <unistd.h>
 
 char *matAFName;
 char *matBFName;
 char *matOutFName;
 long aRows,aColumns,bRows,bColumns;
+long long **matA;
+long long **matB;;
+long long **matOut;
 extern long aRows;
-extern long aColumns;
-extern long bRows;
 extern long bColumns;
 struct timeval stop, start;
 
@@ -54,6 +56,7 @@ int main(int argc , char** argv)
     //first method
     gettimeofday(&start, NULL);
     first_method();
+    sleep(1);
     gettimeofday(&stop, NULL);
     write_output(1,stop,start,1);
     printf("Seconds taken %lu\n", stop.tv_sec - start.tv_sec);
@@ -62,6 +65,7 @@ int main(int argc , char** argv)
     //second method
     gettimeofday(&start, NULL);
     second_method();
+    sleep(2);
     gettimeofday(&stop, NULL);
     write_output(aRows,stop,start,2);
     printf("Seconds taken %lu\n", stop.tv_sec - start.tv_sec);
@@ -70,11 +74,13 @@ int main(int argc , char** argv)
     //third method
     gettimeofday(&start, NULL);
     third_method();
+    sleep(3);
     gettimeofday(&stop, NULL);
     write_output(aRows*bColumns,stop,start,3);
     printf("Seconds taken %lu\n", stop.tv_sec - start.tv_sec);
     printf("Microseconds taken: %lu\n", stop.tv_usec - start.tv_usec);
 
+    printf("Multiplication Done.\nExiting...");
     exit(0);
 
 }

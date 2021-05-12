@@ -8,9 +8,7 @@
 #include <stdio.h>
 #include <sys/time.h>
 
-extern long long **matOutM1;
-extern long long **matOutM2;
-extern long long **matOutM3;
+extern long long **matOut;
 extern char* matOutFName;
 extern long aRows;
 extern long bColumns;
@@ -28,20 +26,14 @@ void write_output(int NumberOfThreads ,struct timeval stop,struct  timeval start
         fprintf(matOutFile , "Number of threads used: %d\n" , NumberOfThreads);
         fprintf(matOutFile,"Seconds taken %lu\n", stop.tv_sec - start.tv_sec);;
         fprintf(matOutFile,"Microseconds taken: %lu\n", stop.tv_usec - start.tv_usec);
-        int i=0 , j=0;
-        for(i ; i< aRows ; i++){
-            j=0;
-            for(j ; j<bColumns ; j++){
-                    if(methodNo==1)
-                        fprintf(matOutFile , "%lld  ", matOutM1[i][j]);
-                    else if(methodNo==2)
-                        fprintf(matOutFile , "%lld  ", matOutM2[i][j]);
-                    else if(methodNo==3)
-                        fprintf(matOutFile , "%lld  ", matOutM3[i][j]);
-
+        for(int i=0 ; i<aRows ; i++){
+            for(int j=0 ; j<bColumns ; j++){
+            	fprintf(matOutFile , "%lld\t", matOut[i][j]);
             }
         fprintf(matOutFile , "\n");
         }
+        fprintf(matOutFile , "\n\n\n");
+
         fclose(matOutFile);
     }
 }

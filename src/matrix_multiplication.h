@@ -7,6 +7,7 @@
 
 #ifndef MATRIX_MULTIPLICATION_H_
 #define MATRIX_MULTIPLICATION_H_
+
 void first_method();
 void second_method();
 void third_method();
