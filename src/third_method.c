@@ -4,7 +4,7 @@
  *  Created on: 13 May 2021
  *      Author: abdelrhman
  */
-
+#include "third_method.h"
 
 extern long long **matA;
 extern long long **matB;
@@ -13,3 +13,7 @@ extern long aColumns;
 extern long bRows;
 extern long bColumns;
 extern long long **matOut;
+
+void third_method(){
+
+}

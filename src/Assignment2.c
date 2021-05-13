@@ -1,7 +1,7 @@
 /*
  ============================================================================
  Name        : Assignment2.c
- Author      : abdelrhman
+ Author      : Abdelrhman
  Version     :
  Copyright   :
  Description : Hello World in C, Ansi-style

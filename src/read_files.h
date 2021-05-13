@@ -13,6 +13,7 @@
 
 
 void read_matrices();
+void getDimentions(char* info, int mat);
 
 
 

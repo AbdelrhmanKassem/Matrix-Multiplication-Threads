@@ -8,6 +8,6 @@
 #ifndef FIRST_METHOD_H_
 #define FIRST_METHOD_H_
 
-
+void third_method();
 
 #endif /* FIRST_METHOD_H_ */
