@@ -1,7 +1,7 @@
 /*
  ============================================================================
  Name        : Assignment2.c
- Author      : Abdelrhman
+ Author      : abdelrhman
  Version     :
  Copyright   :
  Description : Hello World in C, Ansi-style
@@ -9,12 +9,15 @@
  */
 #include "read_files.h"
 #include "write_output.h"
-#include "matrix_multiplication.h"
+#include "first_method.h"
+#include "second_method.h"
+#include "third_method.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/time.h>
 #include <string.h>
 #include <unistd.h>
+
 
 char *matAFName;
 char *matBFName;
