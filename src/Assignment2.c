@@ -16,7 +16,6 @@
 #include <stdlib.h>
 #include <sys/time.h>
 #include <string.h>
-#include <unistd.h>
 
 
 char *matAFName;
@@ -56,32 +55,38 @@ int main(int argc , char** argv)
     printf("Reading files...\n");
     read_matrices();
 
+    if(aColumns!=bRows){
+    	perror("Invalid Matrices Dimensions");
+    	exit(1);
+    }
+
     //first method
     gettimeofday(&start, NULL);
     first_method();
-    sleep(1);
     gettimeofday(&stop, NULL);
     write_output(1,stop,start,1);
+    printf("Method 1:-\n");
     printf("Seconds taken %lu\n", stop.tv_sec - start.tv_sec);
-    printf("Microseconds taken: %lu\n", stop.tv_usec - start.tv_usec);
+    printf("Microseconds taken: %lu\n\n\n", stop.tv_usec - start.tv_usec);
 
     //second method
     gettimeofday(&start, NULL);
     second_method();
-    sleep(2);
     gettimeofday(&stop, NULL);
     write_output(aRows,stop,start,2);
+    printf("Method 2:-\n");
     printf("Seconds taken %lu\n", stop.tv_sec - start.tv_sec);
-    printf("Microseconds taken: %lu\n", stop.tv_usec - start.tv_usec);
+    printf("Microseconds taken: %lu\n\n\n", stop.tv_usec - start.tv_usec);
 
     //third method
     gettimeofday(&start, NULL);
     third_method();
-    sleep(3);
     gettimeofday(&stop, NULL);
     write_output(aRows*bColumns,stop,start,3);
+    printf("Method 3:-\n");
     printf("Seconds taken %lu\n", stop.tv_sec - start.tv_sec);
-    printf("Microseconds taken: %lu\n", stop.tv_usec - start.tv_usec);
+    printf("Microseconds taken: %lu\n\n\n", stop.tv_usec - start.tv_usec);
+
 
     printf("Multiplication Done.\nExiting...");
     exit(0);

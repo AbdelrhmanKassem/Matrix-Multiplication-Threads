@@ -21,18 +21,14 @@ FILE *matOutFile;
 
 void read_matrices(){
 	read_matrix_A();
-	printf("MatA done\n");
     read_matrix_B();
-    printf("MatB done\n");
     free_matrix_out();
-    printf("space freed\n");
     //here file is created or cleared so that I can just open on append mode later when actually writing
     matOutFile= fopen(matOutFName, "w");
     if (matOutFile==NULL) {
         perror("Couldn't Open Files");
         exit(1);
     }
-    printf("file created\n");
 
 
 
@@ -64,7 +60,6 @@ void read_matrix_A (){
         	char* info=malloc(1024);
         	fgets(info, 1024, matAFile);
         	getDimentions(info,0);
-        	printf("MatA dims done\n");
 
         	matA = malloc(aRows * sizeof(long long *));
         	if( matA == NULL ) {
@@ -95,7 +90,6 @@ void read_matrix_B (){
     	char* info=malloc(1024);
     	fgets(info, 1024, matBFile);
     	getDimentions(info,1);
-    	printf("MatB dims done\n");
     	matB = malloc(aRows * sizeof(long long *));
     	if( matB == NULL ) {
     		perror("Memory Allocation Error: ");

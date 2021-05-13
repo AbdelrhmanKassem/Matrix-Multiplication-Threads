@@ -7,6 +7,8 @@
 
 #ifndef SECOND_METHOD_H_
 #define SECOND_METHOD_H_
+#include <pthread.h>
+
 
 void third_method();
 
