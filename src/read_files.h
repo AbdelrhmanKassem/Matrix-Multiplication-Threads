@@ -7,14 +7,15 @@
 
 #ifndef READ_FILES_H_
 #define READ_FILES_H_
-#include <stdbool.h>
-#include <stdio.h>
 
 
 
 
 void read_matrices();
 void getDimentions(char* info, int mat);
+void read_matrix_A ();
+void read_matrix_B ();
+void free_matrix_out();
 
 
 

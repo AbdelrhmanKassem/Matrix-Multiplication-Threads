@@ -9,7 +9,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
 extern long long **matA;
 extern long long **matB;
 extern long long **matOut;
@@ -18,6 +17,7 @@ extern long bRows;
 extern long bColumns;
 
 
+//struct to provide the row number to each thread
 struct thread_data
 {
    long	thread_id;
@@ -26,6 +26,8 @@ struct thread_data
 
 
 void *multiply_second_method(void *data);
+
+//multiply each row in a separate thread
 void second_method (){
 	pthread_t thread[aRows];
 	pthread_attr_t attr;
@@ -58,12 +60,12 @@ void second_method (){
 	}
 }
 
+
+//multiplication function executed by the thread
 void *multiply_second_method(void *threadarg){
 	struct thread_data *data = (struct thread_data *) threadarg;
 
-	long tid;
 	long row;
-	tid = (*data).thread_id;
 	row = (*data).row;
 	free(threadarg);
 	for(long i= 0 ; i < bColumns ; i++){

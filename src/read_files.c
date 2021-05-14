@@ -1,20 +1,33 @@
+/*
+ * read_files.c
+ *
+ *  Created on: 12 May 2021
+ *      Author: abdelrhman
+ */
+
 #include "read_files.h"
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
+FILE *matAFile;				//matrix A file pointer
+FILE *matBFile;				//matrix B file pointer
+FILE *matOutFile;			//output matrix file pointer
+
+//matrices dimensions
 long aRows=0;
 long aColumns=0;
 long bRows=0;
 long bColumns=0;
+
+
 extern long long **matA;
 extern long long **matB;
 extern long long **matOut;
 extern char *matAFName;
 extern char *matBFName;
 extern char *matOutFName;
-FILE *matAFile;
-FILE *matBFile;
-FILE *matOutFile;
+
 
 
 
@@ -34,6 +47,7 @@ void read_matrices(){
 
 }
 
+//allocates memory for the output matrix
 void free_matrix_out(){
 
 	matOut = malloc(aRows * sizeof(long long *));
@@ -50,6 +64,8 @@ void free_matrix_out(){
         }
     }
 }
+
+//reads the first matrix
 void read_matrix_A (){
     FILE *matAFile = fopen(matAFName, "r");
     if(matAFile==NULL){
@@ -80,6 +96,10 @@ void read_matrix_A (){
         	fclose(matAFile);
         }
 }
+
+
+
+//reads the second matrix
 void read_matrix_B (){
 	matBFile = fopen(matBFName, "r");
     if(matBFile==NULL){
@@ -110,12 +130,13 @@ void read_matrix_B (){
     }
 }
 
+//reads the dimensions of the matrices from the provided file name
 void getDimentions(char* info, int mat){ //mat = 0 indicates files is A and = 1 indicates file is B
 	char* token;
     token = strtok(info , "=/t ");
     int isRow =1;
     while(token!= NULL){
-    	if(atoi(token)!=0 || token[0]=='0'){
+    	if(atoi(token)!=0){
     		if(isRow==1){
     			if(mat == 0){
     				aRows=atoi(token);

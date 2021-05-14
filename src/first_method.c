@@ -4,8 +4,8 @@
  *  Created on: 13 May 2021
  *      Author: abdelrhman
  */
-#include "first_method.h"
 
+#include "first_method.h"
 #include <pthread.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -28,11 +28,14 @@ struct thread_data
 
 
 void *multiply_first_method(void *t);
+
+//multiplication using only one thread
 void first_method (){
 	pthread_t thread[1];
 	pthread_attr_t attr;
 	int rc;
 
+	/* Initialize and set thread detached attribute */
 	pthread_attr_init(&attr);
 	pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_JOINABLE);
 	long t=0;
@@ -43,7 +46,7 @@ void first_method (){
 	}
 
 
-
+	/* Free attribute and wait for the thread */
 	pthread_attr_destroy(&attr);
 	rc = pthread_join(thread[0], NULL);
 	if (rc) {
@@ -54,9 +57,11 @@ void first_method (){
 
 }
 
+//multiplication function executed by the thread
 void *multiply_first_method(void *threadarg){
 	for(long i=0 ; i < aRows ; i++){
 			for(long j=0 ; j < bColumns ; j++){
+				//using temporary variable sum to avoid having to set the output matrix to zeros each time
 				long long sum = 0;
 				for(long k=0 ; k < bRows ; k++){
 					sum += matA[i][k] * matB[k][j];

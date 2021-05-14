@@ -7,9 +7,8 @@
 
 #ifndef FIRST_METHOD_H_
 #define FIRST_METHOD_H_
-#include <pthread.h>
 
 
-void third_method();
+void first_method();
 
 #endif /* FIRST_METHOD_H_ */

@@ -17,7 +17,7 @@ extern long aRows;
 extern long aColumns;
 extern long bColumns;
 
-
+//struct to provide the thread with row and column number
 struct thread_data
 {
    long	thread_id;
@@ -27,6 +27,8 @@ struct thread_data
 
 
 void *multiply_third_method(void *data);
+
+//multiplying each element in a separate thread
 void third_method (){
 	pthread_t thread[aRows*bColumns];
 	pthread_attr_t attr;
@@ -66,13 +68,12 @@ void third_method (){
 	}
 }
 
+//multiplication function executed by the thread
 void *multiply_third_method(void *threadarg){
-	struct thread_data *data = (struct thread_data *) threadarg;
 
-	long tid;
+	struct thread_data *data = (struct thread_data *) threadarg;
 	long row;
 	long column;
-	tid = (*data).thread_id;
 	row = (*data).row;
 	column = (*data).column;
 	free(threadarg);
