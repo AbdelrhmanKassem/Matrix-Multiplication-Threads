@@ -5,7 +5,7 @@
  *      Author: abdelrhman
  */
 
-#include "first_method.h"
+#include "headers/first_method.h"
 #include <pthread.h>
 #include <stdio.h>
 #include <stdlib.h>

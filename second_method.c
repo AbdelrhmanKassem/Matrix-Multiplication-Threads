@@ -4,7 +4,7 @@
  *  Created on: 13 May 2021
  *      Author: abdelrhman
  */
-#include "second_method.h"
+#include "headers/second_method.h"
 #include <pthread.h>
 #include <stdio.h>
 #include <stdlib.h>

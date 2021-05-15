@@ -7,11 +7,11 @@
  Description : Matrix Multiplication Using thread main method
  ============================================================================
  */
-#include "read_files.h"
-#include "write_output.h"
-#include "first_method.h"
-#include "second_method.h"
-#include "third_method.h"
+#include "headers/read_files.h"
+#include "headers/write_output.h"
+#include "headers/first_method.h"
+#include "headers/second_method.h"
+#include "headers/third_method.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/time.h>
