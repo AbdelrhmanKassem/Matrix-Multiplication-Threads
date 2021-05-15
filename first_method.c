@@ -41,7 +41,7 @@ void first_method (){
 	long t=0;
 	rc = pthread_create(&thread[0], &attr, multiply_first_method, (void *)t);
 	if (rc) {
-		perror("ERROR Creating Threads");
+		printf("ERROR Creating Threads\n");
 		exit(1);
 	}
 
@@ -50,7 +50,7 @@ void first_method (){
 	pthread_attr_destroy(&attr);
 	rc = pthread_join(thread[0], NULL);
 	if (rc) {
-		perror("ERROR Joining Threads");
+		printf("ERROR Joining Threads\n");
 		exit(1);
 	}
 

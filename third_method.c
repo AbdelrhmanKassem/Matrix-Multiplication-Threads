@@ -46,7 +46,7 @@ void third_method (){
 			data->thread_id = t;
 			rc = pthread_create(&thread[t], &attr, multiply_third_method, (void *)data);
 			if (rc) {
-				perror("ERROR Creating Threads");
+				printf("ERROR Creating Threads\n");
 				exit(1);
 			}
 			t++;
@@ -60,7 +60,7 @@ void third_method (){
 		for(long j=0; j<bColumns; j++){
 			rc = pthread_join(thread[t], NULL);
 			if (rc) {
-				perror("ERROR Joining Threads");
+				printf("ERROR Joining Threads\n");
 				exit(1);
 			}
 			t++;

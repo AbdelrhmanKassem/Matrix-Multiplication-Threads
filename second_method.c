@@ -44,7 +44,7 @@ void second_method (){
 		data->thread_id = t;
 		rc = pthread_create(&thread[t], &attr, multiply_second_method, (void *)data);
 		if (rc) {
-			perror("ERROR Creating Threads");
+			printf("ERROR Creating Threads\n");
 			exit(1);
 		}
 	}
@@ -54,7 +54,7 @@ void second_method (){
 	for(t=0; t<aRows; t++) {
 		rc = pthread_join(thread[t], NULL);
 		if (rc) {
-			perror("ERROR Joining Threads");
+			printf("ERROR Joining Threads\n");
 			exit(1);
 		}
 	}
