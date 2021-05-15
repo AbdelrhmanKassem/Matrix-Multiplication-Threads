@@ -1,0 +1,30 @@
+Method 1 Output
+Number of threads used: 1
+Seconds taken 0
+Total Microseconds taken: 606
+-1	10	-15	-28	
+-3	-10	15	-36	
+5	-2	-9	-20	
+
+
+
+Method 2 Output
+Number of threads used: 3
+Seconds taken 0
+Total Microseconds taken: 762
+-1	10	-15	-28	
+-3	-10	15	-36	
+5	-2	-9	-20	
+
+
+
+Method 3 Output
+Number of threads used: 12
+Seconds taken 0
+Total Microseconds taken: 1138
+-1	10	-15	-28	
+-3	-10	15	-36	
+5	-2	-9	-20	
+
+
+

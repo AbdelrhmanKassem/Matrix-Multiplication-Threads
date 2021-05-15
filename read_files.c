@@ -110,7 +110,7 @@ void read_matrix_B (){
     	char* info=malloc(1024);
     	fgets(info, 1024, matBFile);
     	getDimentions(info,1);
-    	matB = malloc(aRows * sizeof(long long *));
+    	matB = malloc(bRows * sizeof(long long *));
     	if( matB == NULL ) {
     		perror("Memory Allocation Error: ");
     		exit(1);

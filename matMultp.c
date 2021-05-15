@@ -57,7 +57,7 @@ int main(int argc , char** argv)
 
     //make sure we can actually multiply the matrices
     if(aColumns!=bRows){
-    	perror("Invalid Matrices Dimensions");
+    	printf("Error: Invalid Matrices Dimensions\n");
     	exit(1);
     }
 
@@ -98,7 +98,7 @@ int main(int argc , char** argv)
     printf("Total Microseconds taken: %ld\n\n\n", micros);
 
 
-    printf("Multiplication Done.\nExiting...");
+    printf("Multiplication Done.\nExiting...\n\n");
     exit(0);
 
 }

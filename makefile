@@ -1,6 +1,6 @@
 IDIR = headers
 CC=gcc
-CFLAGS=-I$(IDIR) -pthread
+CFLAGS=-pthread
 TARGET = matmult.out
 ODIR= obj
 LIBS= -lpthread
@@ -21,4 +21,5 @@ $(TARGET): $(OBJ)
 .PHONY: clean
 
 clean:
-	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~ 
+	rm -f $(ODIR)/*.o
+	rm -f $(TARGET)
